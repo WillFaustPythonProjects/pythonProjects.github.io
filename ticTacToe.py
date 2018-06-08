@@ -635,3 +635,126 @@ if (user=="5"): # eigth possibility win strategy
             printGrid()
             print("I win! 3 in a row!")
         user="a"
+    if (user=="6"): # if user goes to '6' to tie
+        a6="O"
+        yourMove()
+        printGrid()
+        myMove()
+        a4="X"
+        printGrid()
+        print("")
+        user=input("Where would you like to put your third 'O'? (1-9 from left to right): ")
+        if (user=="1"):
+            a1="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a9="X"
+            printGrid()
+            user=input("Where would you like to put your third 'O'? (1-9 from left to right): ")
+            if (user=="8"):
+                a8="O"
+                yourMove()
+                printGrid()
+                myMove()
+                a2="X"
+                printGrid()
+                print("It's a tie! Nice job!")
+            else:
+                if (user=="2"):
+                    a2="O"
+                    yourMove()
+                    printGrid()
+                    myMove()
+                    a8="X"
+                    printGrid()
+                    print("I win! 3 in a row!")
+        else:
+            if (user=="2"):
+                a2="O"
+            if (user=="8"):
+                a8="O"
+            if (user=="9"):
+                a9="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a1="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        user="a"
+        
+    if (user=="1"): # if user loses with 1
+        a1="O"
+        yourMove()
+        printGrid()
+        myMove()
+        a9="X"
+        printGrid()
+        print("")
+        user=input("Where would you like to put your third 'O'? (1-9 from left to right): ")
+        if (user=="6"):
+            a6="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a8="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        elif (user=="8"):
+            a8="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a6="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        else:
+            if (user=="2"):
+                a2="O"
+            if (user=="4"):
+                a4="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a8="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        user="a"
+    if (user=="9"): # if user loses with 9
+        a9="O"
+        yourMove()
+        printGrid()
+        myMove()
+        a1="X"
+        printGrid()
+        print("")
+        user=input("Where would you like to put your third 'O'? (1-9 from left to right): ")
+        if (user=="2"):
+            a2="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a4="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        elif (user=="4"):
+            a4="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a2="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        else:
+            if (user=="6"):
+                a6="O"
+            if (user=="8"):
+                a8="O"
+            yourMove()
+            printGrid()
+            myMove()
+            a2="X"
+            printGrid()
+            print("I win! 3 in a row!")
+        user="a"
