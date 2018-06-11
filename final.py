@@ -1,6 +1,20 @@
+<<<<<<< HEAD
 import math
 
 def dayOfWeek():
+=======
+"""
+This program asks you various questions and gives
+clever answers in return
+"""
+
+import math # imports the math library into my program
+
+
+def dayOfWeek(): # this function figures out the day of the week you were born
+	print("")
+	print("")
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
 	mInitial=input("What month were you born? Enter Name of month: ") # month number
 	m=0
 
@@ -8,6 +22,11 @@ def dayOfWeek():
 
 	y=int(input("What year were you born?: ")) # year
 
+<<<<<<< HEAD
+=======
+    # all these variables below assign different months to numbers...
+    
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
 	march=1
 
 	april=2
@@ -32,6 +51,12 @@ def dayOfWeek():
 
 	february=12
 
+<<<<<<< HEAD
+=======
+    # all of the if statements below assign what month you typed in
+    # earlier to the right number
+
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
 	if (mInitial == str("march")):
 		m=march
 	elif (mInitial == str("March")):
@@ -92,13 +117,28 @@ def dayOfWeek():
 	elif (mInitial == str("February")):
 		m=february
 
+<<<<<<< HEAD
 	c=int(math.trunc(y/100))
 
 	d=int(y%100)
+=======
+	c=int(math.trunc(y/100)) # this figures out the first 2 digits of the year you enetered
+
+	d=int(y%100) # this figures out the last 2 digits of the year you entered
+
+    # the equation below figures out what day of the week you were born
+    # based on the variables k (day of month), m (what month you typed in),
+    # c (the first 2 digits of the year), and d (the last 2 digits of the year)
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
 
 	fnum=(k + math.trunc((13*m-1)/5) + d + math.trunc(d/4) + math.trunc(c/4) - 2*c)%7
 	f=""
 	
+<<<<<<< HEAD
+=======
+	# the if statements below convert fnum (a number) to f (a string)
+	
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
 	if (fnum == 0):
 		f="Sunday"
 
@@ -121,8 +161,48 @@ def dayOfWeek():
 		f="Saturday"
 
 	print("")
+<<<<<<< HEAD
 	print("you were born on "+f+".")
 
 
 
 dayOfWeek()
+=======
+	print("you were born on "+f+".") # this tells you what day of the week you were born
+
+
+# the code below has you make a password and asks you some questions
+while True: 
+    on_button = input("Type 'turn on' to turn on machine: ")
+    if (on_button == "turn on"):
+        print("Machine is now on!")
+            
+        password = input("Choose a password: ") # password made here
+            
+        print("Welcome! ;)")
+                
+        fav_num = int(input("What is your favorite number?: ")) # asks favorite number
+        print("Cool!")    
+                
+        while True:
+            pass_input = input("Type your password and I will tell you my favorite number: ")
+            if (pass_input == password):
+                print("")
+                print("My favorite number is better than yours! Mine is " + str(fav_num + 1) + "!")
+                break
+            else:
+                print("Access denied...Try again...")
+                continue # if you don't get password right you try again until you do
+        break
+    else:
+        print("'machine sleeping... zzz'")
+        continue # if you don't type "turn on" you can try again until you do
+
+
+dayOfWeek() # calls this function
+
+print("")
+print("Thank you for completing this survey!")
+print("We have already sent your information")
+print("to over one hundred million advertisers!")
+>>>>>>> 0b0bd27c2d745b8512c0517637408eb4109441a7
