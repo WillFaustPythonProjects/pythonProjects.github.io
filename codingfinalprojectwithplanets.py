@@ -22,7 +22,7 @@ def rockCalc():
 	    print("I don't know what you mean.  Let's just do Earth")
 	    a=9.8
 	    
-	
+	print("")
 	d=float(input("How high was the rock dropped off the ground in meters?: "))
 	t=float(((2*d)/a)**0.5)
 	v=float(a*t)
