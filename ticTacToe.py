@@ -363,37 +363,35 @@ if (user=="1"): # sixth possibility win strategy
         yourMove()
         printGrid()
         myMove()
-        a1="X"
+        a9="X"
         printGrid()
         print("")
         user=input("Where would you like to put your third 'O'? (1-9 from left to right): ")
-        if (user=="2"):
-            a2="O"
+        if (user=="6"):
+            a6="O"
             yourMove()
             printGrid()
-            a4="X"
+            a8="X"
             myMove()
             printGrid()
             print("I win! 3 in a row!")
-        elif (user=="4"):
-            a4="O"
+        elif (user=="8"):
+            a8="O"
             yourMove()
             printGrid()
-            a2="X"
+            a6="X"
             myMove()
             printGrid()
             print("I win! 3 in a row!")
         else:
-            if (user=="6"):
-                a6="O"
-            if (user=="8"):
-                a8="O"
-            if (user=="9"):
-                a9="O"
+            if (user=="2"):
+                a2="O"
+            if (user=="4"):
+                a4="O"
             yourMove()
             printGrid()
             myMove()
-            a4="X"
+            a6="X"
             printGrid()
             print("I win! 3 in a row!")
     else:
