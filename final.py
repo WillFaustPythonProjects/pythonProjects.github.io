@@ -1,162 +1,128 @@
+import math
 
-# This program uses human keys  down key  and left arrow key
-# last change to line 2a
+def dayOfWeek():
+	mInitial=input("What month were you born? Enter Name of month: ") # month number
+	m=0
 
-# how to launch and land a self-landing rocket.
+	k=int(input("What day of the month were you born?: ")) # date
 
+	y=int(input("What year were you born?: ")) # year
 
+	march=1
 
-# variables that user types in (real code):
-massOfRocket = float(input("Enter mass of rocket in kg: "))
-surfaceGravity = float(input("Enter surface gravity in m/s^2: "))
-windSpeed = float(input("Enter wind speed in m/s: "))
-landSpot = float(input("Where do you want the rocket to land on the X axis between 0 and 100 units: "))
-finalAltitude = float(input("What do you want the max altitude of the rocket to be on the Y axis between 0 and 100 units: "))
+	april=2
 
+	may=3
 
+	june=4
 
-# pseudo code variables:
+	july=5
 
-# rocketFuel = int(100) # gets changed by rocket speed and other stuff later on
+	august=6
 
+	september=7
 
+	october=8
 
-# Where does rocket need to reach finalAltitude on X axis (pseudo code):
+	november=9
 
+	december=10
 
-# finalAltitudeXAxis = (50-rocketLandSpot)/2
-# finalAltitudeCoordinates = (finalAltitude, finalAltitudeXAxis)
+	january=11
 
+	february=12
 
+	if (mInitial == str("march")):
+		m=march
+	elif (mInitial == str("March")):
+		m=march
 
-# Python algorithms figure out how to launch rocket safely (pseudo code):
+	if (mInitial == str("april")):
+		m=april
+	elif (mInitial == str("April")):
+		m=april
+	
+	if (mInitial == str("may")):
+		m=may
+	elif (mInitial == str("May")):
+		m=may
+	
+	if (mInitial == str("june")):
+		m=june
+	elif (mInitial == str("June")):
+		m=june
+	
+	if (mInitial == str("july")):
+		m=july
+	elif (mInitial == str("July")):
+		m=july
+	
+	if (mInitial == str("august")):
+		m=august
+	elif (mInitial == str("August")):
+		m=august
+	
+	if (mInitial == str("september")):
+		m=september
+	elif (mInitial == str("September")):
+		m=september
+	
+	if (mInitial == str("october")):
+		m=october
+	elif (mInitial == str("October")):
+		m=october
+	
+	if (mInitial == str("november")):
+		m=november
+	elif (mInitial == str("November")):
+		m=november
+	
+	if (mInitial == str("december")):
+		m=december
+	elif (mInitial == str("December")):
+		m=december
+		
+	if (mInitial == str("january")):
+		m=january
+	elif (mInitial == str("January")):
+		m=january
+	
+	if (mInitial == str("february")):
+		m=february
+	elif (mInitial == str("February")):
+		m=february
 
+	c=int(math.trunc(y/100))
 
-# launchSpeed = something to do with surfaceGravity
-# launchSpeed = launchSpeed+something to do with finalAltitudeCoordinates
+	d=int(y%100)
 
-# launchDirection = 0 (insert operator here) something to do with rocketLandSpot
-# launchDirection = launchDirection (insert operator here) something to do with windSpeed
-# launchDirection = launchDirection (insert operator here) something to do with finalAltitudeCoordinates
+	fnum=(k + math.trunc((13*m-1)/5) + d + math.trunc(d/4) + math.trunc(c/4) - 2*c)%7
+	f=""
+	
+	if (fnum == 0):
+		f="Sunday"
 
+	if (fnum == 1):
+		f="Monday"
+		
+	if (fnum == 2):
+		f="Tuesday"
+		
+	if (fnum == 3):
+		f="Wednesday"
+		
+	if (fnum == 4):
+		f="Thursday"
+		
+	if (fnum == 5):
+		f="Friday"
+		
+	if (fnum == 6):
+		f="Saturday"
 
-
-# Algorithm to get to finalAltitudeCoordinates (pseudo code):
-
-
-# Launching:
-
-# point rocket in launchDirection
-# accelerate rocket to launchSpeed at some acceleration
-
-
-# variables affecting rocket during mission to finalAltitudeCoordinates:
-
-# while True:
-# 	rocketWeight = float(something to do with current gravity and massOfRocket)
-# 	rocketWeight = rocketWeight-something to do with rocketFuel
-# 	rocketSpeed(undefined variable) = rocketSpeed+something to do with rocketWeight
-#   windSpeed affects path of rocket (insert complex physics here)
-# 	if (rocket moves in certain direction on x axis because of wind):
-# 		use physics to change movement of rocket and change speed to get to finalAltitudeCoordinations
-# 	if (rocketCoordinations(undefined variable) == some amount of units away from finalAltitudeCoordinations):
-#  		break
-# 	else:
-# 		continue
-
-
-# deccelerating rocket to finalAltitudeCoordinates:
-
-# while True:
-# 	deccelerationToFinalAltitude = something to do with current speed and how far away rocketCoordinations are from finalAltitudeCoordinations
-# 	execute deccelerationToFinalAltitude
-# 	if (rocketCoordinations == finalAltitudeCoordinations):
-#  			break
-# 		else:
-# 			continue
-
-
-
-# Algorithm to get to landing coordinates (pseudo code):
-
-
-# variables:
-
-# landSpotCoordinates = (rocketLandSpot, 0)
-# landDirection = direction towards landSpotCoordinates
-# rocketWeight = float(something to do with current gravity and massOfRocket)
-# rocketWeight = rocketWeight-something to do with rocketFuel
-# landSpeed = something to do with how landSpotCoordinates
-# landSpeed = landSpeed and something to do with rocketWeight
-
-
-# Starting landing:
-
-# point rocket in landDirection
-# accelerate rocket to landSpeed at some acceleration
-
-
-# variables affecting rocket during mission to landSpotCoordinates:
-
-# while True:
-# 	rocketWeight = float(something to do with current gravity and massOfRocket)
-# 	rocketWeight = rocketWeight-something to do with rocketFuel
-# 	rocketSpeed(undefined variable) = rocketSpeed+something to do with rocketWeight
-#   windSpeed affects path of rocket (insert complex physics here)
-# 	if (rocket moves in certain direction on x axis because of wind):
-# 		use physics to change movement of rocket and change speed to get to landSpotCoordinations
-# 	if (rocketCoordinations(undefined variable) == some amount of units away from landSpotCoordinations):
-# 		change rocket direction degrees to 0 degrees
-#  		break
-# 	else:
-# 		continue
-
-
-# deccelerating rocket to landSpotCoordinates:
-
-# while True:
-#	deccelerationToLandSpot = something to do with current speed and how far away rocketCoordinations are from landSpotCoordinations
-# 	execute deccelerationToLandSpot
-# 	if (rocketCoordinations == landSpotCoordinations):
-#  			break
-# 		else:
-# 			continue
-
-
-
-# graphics info:
+	print("")
+	print("you were born on "+f+".")
 
 
-# movement:
 
-# when rocket moves horizontaly to fight wind show side stabilizers shoot out air
-# when rocket speed goes faster show flame getting bigger on bottom
-
-
-# Things that live sensor feedback will constantly update and tell you about (pseudo code):
-
-# while True:
-# 	print("Coordinates of rocket: " + str(rocketCoordinates))
-# 	print("Velocity of rocket: " + str(rocket velocity))
-# 	print("Acceleration of rocket: " + str(rocket acceleration))
-# 	print("Force of gravity on rocket: " + str(current gravity))
-# 	print("Weight of rocket: " + str(rocketWeight))
-# 	print("Fuel left: " + str(fuel left))
-# 	print("Angle of nose: " + str(rocket direction))
-# 	print("Altitude of rocket: " + str(rocket altitude))
-# 	print("Air pressure at current altitude: " + str(air pressure))
-# 	if (rocketCoordinates == landSpotCoordinates):
-# 		break
-# 	else:
-# 		delete all printed statements
-# 		wait 0.1 seconds
-# 		continue
-
-
-# Stats after rocket lands:
-
-# print("The rocket has landed succesfully!")
-# print("Rocket weight at highest altitude: " + str(lowest weight))
-# print("Gravity at highest altitude: " + str(lowest gravity))
-# print("Highest air pressure: " + str(highest air pressure))
-# print("Highest velocity of rocket: " + str(highest velocity))
+dayOfWeek()
