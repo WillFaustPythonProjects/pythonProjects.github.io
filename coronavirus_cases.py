@@ -7,7 +7,7 @@ def coronavirus_cases():
   html = requests.get('https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html')
   doc = lxml.html.fromstring(html.content)
 
-  current_date = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-rcgy8g"]/text()')[0]
+  current_date = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-2xhdfr"]/text()')[0]
   current_day = re.sub('[a-z, A-Z]', '', current_date)
   current_day = current_day[1:]
 
