@@ -9,7 +9,7 @@ doc = lxml.html.fromstring(html.content)
 
 def coronavirus_cases():
 
-  current_date = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-2xhdfr"]/text()')[0]
+  current_date = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-2xhdfr"]/text()')[0]
   current_day = re.sub('[a-z, A-Z]', '', current_date)
   current_day = current_day[1:]
 
@@ -38,14 +38,14 @@ def coronavirus_cases():
   delta = d1 - d0
   virus_day_num = delta.days+1
 
-  one_case_height = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/svg/rect[1]/@height')[0]
-  new_cases_height = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/svg/rect['+str(virus_day_num)+']/@height')[0]
+  one_case_height = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/svg/rect[1]/@height')[0]
+  new_cases_height = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/svg/rect['+str(virus_day_num)+']/@height')[0]
   new_cases = float(new_cases_height)/float(one_case_height)
 
   print(str(round(new_cases)))
 
 
-current_date = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-2xhdfr"]/text()')[0]
+current_date = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/div[3]/span[@class="last x-label svelte-2xhdfr"]/text()')[0]
 current_day = re.sub('[a-z, A-Z]', '', current_date)
 current_day = current_day[1:]
 
@@ -54,12 +54,12 @@ d1 = date(2020, 3, int(current_day))
 delta = d1 - d0
 day_in_loop = delta.days+1
 
-one_case_height = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/svg/rect[1]/@height')[0]
+one_case_height = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/svg/rect[1]/@height')[0]
 
 total_cases = 0
 
 while int(day_in_loop) != 0:
-	new_cases_height = doc.xpath('//*[@id="g-trajectory"]/div[1]/div/div/svg/rect['+str(day_in_loop)+']/@height')[0]
+	new_cases_height = doc.xpath('//*[@id="g-cases-over-time"]/div[1]/div/div/svg/rect['+str(day_in_loop)+']/@height')[0]
 	new_cases = float(new_cases_height)/float(one_case_height)
 	new_cases = int(round(new_cases))
 	day_in_loop = day_in_loop-1
