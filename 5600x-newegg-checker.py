@@ -8,7 +8,7 @@ n = 1
 
 while True:
   try:
-    html = urlopen('https://www.newegg.com/amd-ryzen-5-5600x/p/N82E16819113666').read().decode("utf-8")
+    html = urlopen('https://newegg.com/amd-ryzen-5-5600x/p/N82E16819113666').read().decode("utf-8")
     site = lxml.html.fromstring(html)
   except lxml.etree.ParserError:
     time.sleep(1)
@@ -29,10 +29,10 @@ while True:
   elif (status == "Add to cart "):
     print(str(n) + ". In stock")
     ToastNotifier().show_toast("5600x Newegg Checker:","The 5600x is in stock!",icon_path="ryzen.ico")
-    Notify().send('The 5600x is in stock!')
+    Notify().send('The 5600x is in stock on Newegg!')
     n = n + 1
     continue
   else:
-    print(str(n) + status)
+    print(str(n) + ". " + status)
     n = n + 1
     time.sleep(2)
